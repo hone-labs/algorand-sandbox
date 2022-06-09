@@ -1,0 +1,74 @@
+
+#
+# Local sandbox
+#
+@base_url = http://localhost:4001
+@api_key = aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+#
+# When using the local Sandbox most requests require the following header:
+# 
+# X-Algo-API-Token: {{api_key}}
+#
+
+###
+# Gets the genesis information.
+
+GET {{base_url}}/genesis
+
+###
+# Returns OK if healthy.
+
+GET {{base_url}}/health
+
+###
+# Retrieves the supported API versions, binary build versions, and genesis information.
+
+GET {{base_url}}/versions
+
+###
+# Gets the current node status.
+
+GET {{base_url}}/v2/status
+X-Algo-API-Token: {{api_key}}
+
+###
+# Get the current supply reported by the ledger.
+
+GET {{base_url}}/v2/ledger/supply
+X-Algo-API-Token: {{api_key}}
+
+###
+# Get parameters for constructing a new transaction
+
+GET {{base_url}}/v2/transactions/params
+X-Algo-API-Token: {{api_key}}
+
+###
+# Get a list of unconfirmed transactions currently in the transaction pool.
+
+GET {{base_url}}/v2/transactions/pending
+X-Algo-API-Token: {{api_key}}
+
+###
+# Get account information.
+
+@address = 1234
+
+GET {{base_url}}/v2/accounts/{{address}}
+X-Algo-API-Token: {{api_key}}
+
+
+###
+# Get a list of unconfirmed transactions currently in the transaction pool by address.
+
+GET {{base_url}}/v2/accounts/{{address}}/transactions/pending
+X-Algo-API-Token: {{api_key}}
+
+###
+# Get the block for the given round.
+
+@roundNumber = 1234
+
+GET {{base_url}}/v2/blocks/{{roundNumber}}
+X-Algo-API-Token: {{api_key}}

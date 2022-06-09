@@ -1,0 +1,53 @@
+#
+# To deploy:
+#
+# figit ./scripts/kubernetes/deploy-sandbox.yaml --output yaml | kubectl apply -f -
+#
+#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: algorand-sandbox-indexer
+  labels: 
+    app: algorand-sandbox-indexer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: algorand-sandbox-indexer
+  template:
+    metadata:
+      labels:
+        app: algorand-sandbox-indexer
+    spec:
+      containers: 
+      - name: algorand-sandbox-indexer
+        image: {{DOCKER_REGISTRY}}/algorand-sandbox-indexer:{{VERSION}}
+        imagePullPolicy: Always
+        env:
+        - name: DISABLED
+          value: ""
+        - name: PORT
+          value: "8980"
+        - name: SNAPSHOT
+          value: ""
+        - name: CONNECTION_STRING
+          value: "host=algorand-sandbox-postgres port=5432 user=algorand password=algorand dbname=indexer_db sslmode=disable"
+        - name: ALGOD_ADDR
+          value: "algorand-sandbox-algod:80"
+        - name: ALGOD_TOKEN
+          value: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        ports:
+        - containerPort: 8980
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorand-sandbox-indexer
+spec:
+  selector:
+    app: algorand-sandbox-indexer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8980

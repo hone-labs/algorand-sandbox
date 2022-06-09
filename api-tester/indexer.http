@@ -1,0 +1,80 @@
+#
+# Local sandbox
+#
+@base_url = http://localhost:8980
+
+###
+# Returns OK if healthy.
+
+GET {{base_url}}/health
+
+###
+# Search for accounts.
+
+GET {{base_url}}/v2/accounts
+
+###
+# Get an account.
+
+@address = 1234
+
+GET {{base_url}}/v2/accounts/{{address}}
+
+###
+# Get transactions.
+
+GET {{base_url}}/v2/accounts/{{address}}/transactions
+
+###
+# Search for applications.
+
+GET {{base_url}}/v2/applications
+
+###
+# Get an application.
+
+@appId = 1234
+
+GET {{base_url}}/v2/applications/{{appId}}
+
+###
+# Search for assets.
+
+GET {{base_url}}/v2/assets
+
+###
+# Lookup asset information.
+
+@assetId = 1234
+
+GET {{base_url}}/v2/assets/{{assetId}}
+
+###
+# Lookup the list of accounts who hold this asset.
+
+GET {{base_url}}/v2/assets/{{assetId}}/balances
+
+###
+# Lookup transactions for an asset.
+
+GET {{base_url}}/v2/assets/{{assetId}}/transactions
+
+###
+# Lookup a block.
+
+@roundNumber = 1234
+
+GET {{base_url}}/v2/blocks/{{roundNumber}}
+
+###
+# Search for transactions.
+
+GET {{base_url}}/v2/transactions
+
+###
+# Lookup a single transaction.
+
+@transactionId = 1234
+
+GET {{base_url}}/v2/transactions/{{transactionId}}
+

@@ -1,0 +1,47 @@
+#
+# To deploy:
+#
+# figit ./scripts/kubernetes/deploy-postgres.yaml --output yaml | kubectl apply -f -
+#
+#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: algorand-sandbox-postgres
+  labels: 
+    app: algorand-sandbox-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: algorand-sandbox-postgres
+  template:
+    metadata:
+      labels:
+        app: algorand-sandbox-postgres
+    spec:
+      containers: 
+      - name: algorand-sandbox-postgres
+        image: postgres:13-alpine
+        imagePullPolicy: Always
+        env:
+        - name: POSTGRES_USER
+          value: algorand
+        - name: POSTGRES_PASSWORD
+          value: algorand
+        - name: POSTGRES_DB
+          value: indexer_db
+        ports:
+        - containerPort: 5432
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorand-sandbox-postgres
+spec:
+  selector:
+    app: algorand-sandbox-postgres
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432

@@ -1,0 +1,67 @@
+#
+# To deploy:
+#
+# figit ./scripts/kubernetes/deploy-sandbox.yaml --output yaml | kubectl apply -f -
+#
+#
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: algorand-sandbox-algod
+  labels: 
+    app: algorand-sandbox-algod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: algorand-sandbox-algod
+  template:
+    metadata:
+      labels:
+        app: algorand-sandbox-algod
+    spec:
+      containers: 
+      - name: algorand-sandbox-algod
+        image: {{DOCKER_REGISTRY}}/algorand-sandbox-algod:{{VERSION}}
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 4001
+        - containerPort: 4002
+        - containerPort: 9392
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorand-sandbox-algod
+spec:
+  selector:
+    app: algorand-sandbox-algod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4001
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorand-sandbox-kmd
+spec:
+  selector:
+    app: algorand-sandbox-algod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 4002
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: algorand-sandbox-cdt
+spec:
+  selector:
+    app: algorand-sandbox-algod
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 9392
+

@@ -1,0 +1,24 @@
+{
+    "Genesis": {
+        "NetworkName": "",
+        "Wallets": [
+            {
+                "Name": "Faucet",
+                "Stake": 100,
+                "Online": true
+            }
+        ],
+        "DevMode": true
+    },
+    "Nodes": [
+        {
+            "Name": "Node",
+            "Wallets": [
+                {
+                    "Name": "Faucet",
+                    "ParticipationOnly": false
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "algorand-sandbox",
+  "version": "1.0.0",
+  "description": "Creates an Algorand private network including Algod and Indexer REST APIs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hone-labs/algorand-sandbox.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hone-labs/algorand-sandbox/issues"
+  },
+  "homepage": "https://github.com/hone-labs/algorand-sandbox#readme",
+  "devDependencies": {
+    "figit": "0.0.6"
+  }
+}
