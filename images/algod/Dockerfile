@@ -6,7 +6,7 @@ ARG BRANCH=
 ARG SHA=
 
 # When these are set attempt to connect to a network.
-ARG GENESIS_FILE=""
+ARG GENESIS_FILE="/tmp/images/algod/genesis.json"
 ARG BOOTSTRAP_URL=""
 
 # Options for algod config
@@ -47,7 +47,7 @@ RUN /tmp/images/algod/setup.py \
  --algod-port "${ALGOD_PORT}" \
  --kmd-port "${KMD_PORT}" \
  --bootstrap-url "${BOOTSTRAP_URL}" \
- --genesis-file "/tmp/${GENESIS_FILE}"
+ --genesis-file "${GENESIS_FILE}"
 
 ENV PATH="$BIN_DIR:${PATH}"
 WORKDIR /opt/data

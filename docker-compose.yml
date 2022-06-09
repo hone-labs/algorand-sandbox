@@ -13,7 +13,7 @@ services:
         BRANCH: ""
         SHA: ""
         BOOTSTRAP_URL: ""
-        GENESIS_FILE: ""
+        GENESIS_FILE: "/tmp/images/algod/genesis.json"
         TEMPLATE: "/tmp/images/algod/dev-template.json"
         TOKEN: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         ALGOD_PORT: "4001"

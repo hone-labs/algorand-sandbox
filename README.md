@@ -70,20 +70,24 @@ Once you have a shell into algod you can run goals commands against it, like:
 goal account list
 ```
 
-## Changing to "dev mode"
+## Changing to "normal mode"
+
+By default the Sandbox starts in "dev mode" which is way faster than "normal mode" because it creates block per transaction.
+
+Here's how to change to "normal mode":
 
 Open `docker-compose.yml`.
 
 Change this line:
 
 ```
-ARG TEMPLATE="/tmp/images/algod/template.json"
-```
-
-To use the dev template:
-
-```
 ARG TEMPLATE="/tmp/images/algod/dev-template.json"
+```
+
+To use the normal template:
+
+```
+ARG TEMPLATE="/tmp/images/algod/template.json"
 ```
 
 Restart:
@@ -92,3 +96,13 @@ Restart:
 docker compose down
 docker compose up
 ```
+
+## The faucet account
+
+By default the Sandbox starts with a "Faucet account" with a huge amount of Algos (courtesy of a custom genesis file). 
+
+You can use the faucet to fund whatever test accounts you care to create.
+
+### Account details:
+- Address: SMG6FYYEOJV76DABQHS2TMNLQBZWXXVAUVTSL2PT4QCM43AMRJ4NYBHFKU
+- Mnemonic: blind fan example frog garage repair unable fuel gorilla key inch chaos rather segment enter eager emerge coffee reveal crime fence harbor suspect absent barely
