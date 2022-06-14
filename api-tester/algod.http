@@ -58,6 +58,13 @@ X-Algo-API-Token: {{api_key}}
 GET {{base_url}}/v2/accounts/{{address}}
 X-Algo-API-Token: {{api_key}}
 
+###
+# Get information about the faucet account.
+#
+
+GET {{base_url}}/v2/accounts/SMG6FYYEOJV76DABQHS2TMNLQBZWXXVAUVTSL2PT4QCM43AMRJ4NYBHFKU
+X-Algo-API-Token: {{api_key}}
+
 
 ###
 # Get a list of unconfirmed transactions currently in the transaction pool by address.
