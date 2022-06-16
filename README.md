@@ -78,16 +78,18 @@ Here's how to change to "normal mode":
 
 Open `docker-compose.yml`.
 
-Change this line:
+Change these lines:
 
 ```
-ARG TEMPLATE="/tmp/images/algod/dev-template.json"
+GENESIS_FILE: "/tmp/images/algod/dev-genesis.json"
+TEMPLATE: "/tmp/images/algod/dev-template.json"
 ```
 
 To use the normal template:
 
 ```
-ARG TEMPLATE="/tmp/images/algod/template.json"
+GENESIS_FILE: "/tmp/images/algod/genesis.json"
+TEMPLATE: "/tmp/images/algod/template.json"
 ```
 
 Restart:
