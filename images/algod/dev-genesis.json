@@ -1,0 +1,39 @@
+{
+    "alloc": [
+        {
+            "addr": "7777777777777777777777777777777777777777777777777774MSJUVU",
+            "comment": "RewardsPool",
+            "state": {
+                "algo": 125000000000000,
+                "onl": 2
+            }
+        },
+        {
+            "addr": "A7NMWS3NT3IUDMLVO26ULGXGIIOUQ3ND2TXSER6EBGRZNOBOUIQXHIBGDE",
+            "comment": "FeeSink",
+            "state": {
+                "algo": 100000,
+                "onl": 2
+            }
+        },
+        {
+            "addr": "SMG6FYYEOJV76DABQHS2TMNLQBZWXXVAUVTSL2PT4QCM43AMRJ4NYBHFKU",
+            "comment": "Faucet",
+            "state": {
+                "algo": 10000000000000000,
+                "onl": 1,
+                "sel": "Hq1YGdDEpSgRelo76canZSXooBG1O6bXk+nLHSmY/mQ=",
+                "stprf": "atQSyzjHmcGDowPOn/RyOAV5rbnZ1LzCnGcnqcj2Rnf+lCam1usYztxzuF8dAU7Cb79EDiDkD0ONCKj35ZuXHA==",
+                "vote": "PO/MHPuyV3JCAdfBU+zvnBYVFAJurWHFevK2WfrlsLc=",
+                "voteKD": 10000,
+                "voteLst": 3000000
+            }
+        }
+    ],
+    "devmode": true,
+    "fees": "A7NMWS3NT3IUDMLVO26ULGXGIIOUQ3ND2TXSER6EBGRZNOBOUIQXHIBGDE",
+    "id": "v1",
+    "network": "sandnet",
+    "proto": "https://github.com/algorandfoundation/specs/tree/d5ac876d7ede07367dbaa26e149aa42589aac1f7",
+    "rwd": "7777777777777777777777777777777777777777777777777774MSJUVU"
+}
