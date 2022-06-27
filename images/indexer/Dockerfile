@@ -1,4 +1,4 @@
-FROM golang:1.13.12-alpine
+FROM golang:1.17.5-alpine
 
 # Environment variables used by install.sh
 ARG URL=https://github.com/algorand/indexer

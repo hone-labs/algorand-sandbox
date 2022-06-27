@@ -69,7 +69,6 @@ def create_real_network(bin_dir, network_dir, template, genesis_file) -> List[st
 
     # Copy in the genesis file...
     target_genesis_file=join(target, "genesis.json")
-    shutil.copy(genesis_file, target)
     shutil.copy(genesis_file, target_genesis_file)
 
     data_dir, kmd_dir = algod_directories(network_dir)
