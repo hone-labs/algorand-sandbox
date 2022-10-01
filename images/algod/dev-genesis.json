@@ -35,5 +35,6 @@
     "id": "v1",
     "network": "sandnet",
     "proto": "https://github.com/algorandfoundation/specs/tree/d5ac876d7ede07367dbaa26e149aa42589aac1f7",
-    "rwd": "7777777777777777777777777777777777777777777777777774MSJUVU"
+    "rwd": "7777777777777777777777777777777777777777777777777774MSJUVU",
+    "timestamp": 1560210489
 }
